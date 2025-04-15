@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>Blog</title>
-    <link rel="stylesheet" href="{% static 'blog/static/blog/bootstrap/bootstrap.min.css'%}" media="screen">
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css'%}" media="screen">
     <link href = "./practice.css" rel = "stylesheet" type = "text/css">
     <link href = "/Users/jaehee/Desktop/html/bootstrap4:css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
 
@@ -48,11 +48,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logInModal">
-        Launch demo modal
-    </button>
   
   <!-- Modal -->
     <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModal" aria-hidden="true">
@@ -89,7 +84,7 @@
                 {% for p in post_list %}
                 <!-- Blog post-->
                 <div class="card mb-4">
-                    <a href="#!"><img class="card-img-top" src="images/블로그 대표 이미지.jpg" alt="..." /></a>
+                    <img class="card-img-top" src="{{ p.head_image.url }}" alt="Card image cap" />
                     <div class="card-body">
                         <h2 class="card-title h4">{{ p.title }}</h2>
                         <p class="card-text">{{ p.content }}</p>
