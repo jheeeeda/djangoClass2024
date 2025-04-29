@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>{{ post.title }} - Blog</title>
         <!-- Favicon-->
-        <link rel="stylesheet" href="{% static 'blog/static/blog/bootstrap/bootstrap.min.css'%}" media="screen">
+        <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css'%}" media="screen">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="blog/static/blog/css/style.css" rel="stylesheet" />
 
@@ -52,6 +52,10 @@
                                 <i class="far fa-file"></i>
                             {% endif %}
                             {{ post.get_file_name }}
+                        
+                        
+                        
+                        
                         
                         </a>
                         {% endif %}

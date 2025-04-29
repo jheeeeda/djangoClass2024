@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
     <title>Blog</title>
-    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css'%}" media="screen">
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <link href = "./practice.css" rel = "stylesheet" type = "text/css">
-    <link href = "/Users/jaehee/Desktop/html/bootstrap4:css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+    <link href = "blog/static/blog/css/style.css" rel = "stylesheet" type = "text/css">
 
     <script src="https://kit.fontawesome.com/7a9f96cf2e.js" crossorigin="anonymous"></script>
 </head>
@@ -91,7 +91,10 @@
                     {% endif %}
                     <div class="card-body">
                         <h2 class="card-title h4">{{ p.title }}</h2>
-                        <p class="card-text">{{ p.content }}</p>
+                        {% if p.hook_text %}
+                            <h5 class="text-muted">{{ p.hook_text }}</h5>
+                        {% endif %}
+                        <p class="card-text">{{ p.content | truncatewords:45 }}</p>
                         <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
