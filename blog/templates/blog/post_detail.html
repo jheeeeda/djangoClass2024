@@ -61,7 +61,7 @@
                                 <i class="fas fa-tags"></i>
                                 {% for tag in post.tag.all %}
                                     <a href="{{tag.get_absolute.url }}" class = badge badge-light>{{ tag }}</a>
-                                {% endif %}
+                                {% endfor %}
                                 <br/>
                                 <br/>
                             {% endif %}
